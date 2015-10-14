@@ -1,0 +1,98 @@
+{
+    "appKeys": {
+        "KEY_BACKGRND": 2,
+        "KEY_BATTERY": 5,
+        "KEY_BLUETOOTH": 3,
+        "KEY_BLUETOOTH_GRID": 4,
+        "KEY_CHOUR": 7,
+        "KEY_CMINUTE": 6,
+        "KEY_FONT": 0,
+        "KEY_GRID": 9,
+        "KEY_MARGIN": 1,
+        "KEY_PMINUTE": 8
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "Rejca",
+    "longName": "2B WATCH",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/font_lw.png",
+                "name": "IMAGE_FONT_W_LIGHT",
+                "type": "png"
+            },
+            {
+                "file": "images/font_lr.png",
+                "name": "IMAGE_FONT_R_LIGHT",
+                "type": "png"
+            },
+            {
+                "file": "images/font_lg.png",
+                "name": "IMAGE_FONT_G_LIGHT",
+                "type": "png"
+            },
+            {
+                "file": "images/font_lb.png",
+                "name": "IMAGE_FONT_B_LIGHT",
+                "type": "png"
+            },
+            {
+                "file": "images/vertical.png",
+                "name": "IMAGE_VERTICAL",
+                "type": "png"
+            },
+            {
+                "file": "images/horizontal.png",
+                "name": "IMAGE_HORIZONTAL",
+                "type": "png"
+            },
+            {
+                "file": "images/font_w.png",
+                "name": "IMAGE_FONT_W",
+                "type": "png"
+            },
+            {
+                "file": "images/font_r.png",
+                "name": "IMAGE_FONT_R",
+                "type": "png"
+            },
+            {
+                "file": "images/font_g.png",
+                "name": "IMAGE_FONT_G",
+                "type": "png"
+            },
+            {
+                "file": "images/font_b.png",
+                "name": "IMAGE_FONT_B",
+                "type": "png"
+            },
+            {
+                "file": "images/battery_w.png",
+                "name": "IMAGE_BATTERY_B",
+                "type": "png"
+            },
+            {
+                "file": "images/battery_b.png",
+                "name": "IMAGE_BATTERY_W",
+                "type": "png"
+            },
+            {
+                "file": "images/menu.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "2",
+    "shortName": "2B WATCH",
+    "uuid": "ae552be5-3d80-4913-983c-333a1f5a430d",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
