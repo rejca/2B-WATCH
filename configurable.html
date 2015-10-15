@@ -12,17 +12,15 @@
     <div data-role="page" id="main">
       
       <div data-role="header" class="jqm-header">
-        <h1>2B WATCH config</h1>
+        <h1>2B WATCH</h1>
       </div>
       
       <div data-role="content">
-        Use this configuration page to choose the settings you would like applied to this app (reload watchfaces required).
-      </div>
-
-      <div data-role="content">
+        
+        <div>Use this configuration page to choose the settings you would like applied to this app (reload watchface required).</div>
 
         <div data-role="fieldcontain">
-          <label for="backgrnd">Themes:</label>
+          <label for="backgrnd">Theme:</label>
           <select name="backgrnd" id="backgrnd" data-role="slider">
             <option value="0">Normal</option>
             <option value="1">Invert</option>
@@ -66,7 +64,7 @@
 
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
-            <legend>Margin:</legend>
+            <legend>Margin (offset between numbers):</legend>
             <input type="radio" id="margin_min" name="margin" value="0" /><label for="margin_min">Min</label>
             <input type="radio" id="margin_low" name="margin" value="1" checked="checked" /><label for="margin_low">Low</label>
             <input type="radio" id="margin_middle" name="margin" value="2" /><label for="margin_middle">Middle</label>
@@ -77,38 +75,36 @@
 
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
-            <legend>Grid between the numbers.:</legend>
+            <legend>Grid between the numbers:</legend>
             <input type="radio" id="grid_off" name="grid" value="0" checked="checked" /><label for="grid_off">Off</label>
             <input type="radio" id="grid_short" name="grid" value="1" /><label for="grid_short">Short</label>
             <input type="radio" id="grid_long" name="grid" value="2" /><label for="grid_long">Long</label>
             <input type="radio" id="grid_full" name="grid" value="3" /><label for="grid_full">Full</label>            
           </fieldset>          
-        </div>
+        </div>            
 
-        <div data-role="fieldcontain">
-          <label for="bluetooth">Vibrations of change bluetooth:</label>
-          <select name="bluetooth" id="bluetooth" data-role="slider">
-            <option value="0">Off</option>
-            <option value="1" selected="selected">On</option>
-          </select>
-        </div>  
-        
-        <div data-role="fieldcontain">
-          <label for="bluetooth_grid">Show active bluetooth (right bar):</label>
-          <select name="bluetooth_grid" id="bluetooth_grid" data-role="slider">
-            <option value="0">Off</option>
-            <option value="1" selected="selected">On</option>
-          </select>
-        </div>  
-        
         <div data-role="fieldcontain">
           <label for="battery">Show battery (left bar):</label>
           <select name="battery" id="battery" data-role="slider">
             <option value="0">Off</option>
             <option value="1" selected="selected">On</option>
           </select>
-        </div>                  
+        </div> 
 
+        <div data-role="fieldcontain">
+          <label for="bluetooth_grid">Show active bluetooth (right bar):</label>
+          <select name="bluetooth_grid" id="bluetooth_grid" data-role="slider">
+            <option value="0">Off</option>
+            <option value="1" selected="selected">On</option>
+          </select>
+
+          <label for="bluetooth">Vibrations if change bluetooth connection:</label>
+          <select name="bluetooth" id="bluetooth" data-role="slider">
+            <option value="0">Off</option>
+            <option value="1" selected="selected">On</option>
+          </select>
+        </div>  
+                                 
     <!--
 
         <div data-role="fieldcontain">
@@ -135,6 +131,18 @@
               <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Save</button></div>
             </fieldset>
           </div>
+          
+          <div style="text-align: center; margin-top: 10px;">
+            
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="V658NZJGC8XMG">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          
+          </div>
+          
         </div>
       </div>
     </div>
