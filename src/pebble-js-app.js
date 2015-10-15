@@ -8,8 +8,8 @@ var options = {};
 
 Pebble.addEventListener("showConfiguration", function(e) {
   //console.log("showing configuration");
-  Pebble.openURL('http://pebble.hogo.cz/bar_watch/configurable.html?'+encodeURIComponent(JSON.stringify(options)));
-  //Pebble.openURL('http://pebble.hogo.cz/bar_watch/configurable.html');
+  //Pebble.openURL('http://pebble.hogo.cz/bar_watch/configurable.html?'+encodeURIComponent(JSON.stringify(options)));
+  Pebble.openURL('http://pebble.hogo.cz/bar_watch/configurable.html');
 });
 
 Pebble.addEventListener("webviewclosed", function(e) {

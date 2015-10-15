@@ -11,7 +11,7 @@
 #define KEY_PMINUTE 8
 #define KEY_GRID 9
   
-uint8_t byte_array[10];  //variable to watch storage
+uint8_t byte_array[11];  //variable to watch storage
 int DATA_KEY = 1;  
   
 static Window *s_main_window;
@@ -234,7 +234,7 @@ static void update_time() {
       s_bluetooth_buffer = 0;
     }    
     if (s_bluetooth != s_bluetooth_buffer) {             
-      vibes_short_pulse();
+      vibes_double_pulse();
       s_bluetooth=s_bluetooth_buffer;
     }  
   }
@@ -331,7 +331,7 @@ static void main_window_load(Window *window) {
     
   if (bluetooth_grid == BLUETOOTH_GRID_ON) {
     if (backgrnd == BACKGRND_WHITE) {  //black smaller - big contrast
-      s_background_layer_bluetooth = bitmap_layer_create(GRect(141, 0, 3, 168));  //72 0 1 168
+      s_background_layer_bluetooth = bitmap_layer_create(GRect(140, 0, 4, 168));  //72 0 1 168
     } else {
       s_background_layer_bluetooth = bitmap_layer_create(GRect(143, 0, 1, 168));  //72 0 1 168
     }
@@ -340,7 +340,7 @@ static void main_window_load(Window *window) {
   
   if  (battery == BATTERY_ON)  {
     if (backgrnd == BACKGRND_WHITE) {
-      s_background_layer_battery = bitmap_layer_create(GRect(0, 0, 3, 168));  //144x168
+      s_background_layer_battery = bitmap_layer_create(GRect(0, 0, 4, 168));  //144x168
     } else {
       s_background_layer_battery = bitmap_layer_create(GRect(0, 0, 1, 168));  //144x168
     }
@@ -354,9 +354,10 @@ static void main_window_load(Window *window) {
   ya_grid = 0; yd_grid = 144;    
   
   if (grid != GRID_OFF) {
+        
     s_vertical = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_VERTICAL); 
     s_horizontal = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_HORIZONTAL);   
-  
+    
     if (grid == GRID_SHORT) {
       xa_grid = 18-(1*y_diff); xd_grid = 132+(2*y_diff);
       ya_grid = 30-(1*x_diff); yd_grid = 84+(2*x_diff);
@@ -369,10 +370,10 @@ static void main_window_load(Window *window) {
     
     s_background_layer_vertical = bitmap_layer_create(GRect(72, xa_grid, 1, xd_grid));  //72 0 1 168
     s_background_layer_horizontal = bitmap_layer_create(GRect(ya_grid, 84, yd_grid, 1));  //0 84 144 1
-    
+
     layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer_vertical));  
     layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer_horizontal));                     
-    
+        
     bitmap_layer_set_bitmap(s_background_layer_vertical, s_vertical);
     bitmap_layer_set_bitmap(s_background_layer_horizontal, s_horizontal);    
   }
@@ -445,6 +446,10 @@ static void inbox_received_handler(DictionaryIterator *iterator, void *context) 
     // Look for next item
     t = dict_read_next(iterator);
   }  
+  
+  //save config to pebble
+  persist_write_data(DATA_KEY, byte_array, sizeof(byte_array));
+  
 }
 
 static void init() {      
@@ -524,8 +529,8 @@ static void init() {
 }
 
 static void deinit() {
-  // Destroy Window
-  persist_write_data(DATA_KEY, byte_array, sizeof(byte_array));
+  //Destroy Window
+  //persist_write_data(DATA_KEY, byte_array, sizeof(byte_array));
   //APP_LOG(APP_LOG_LEVEL_DEBUG, "konfigurace ulozena");
   
   /*for(int i = 0; i <= 10; i++) {
